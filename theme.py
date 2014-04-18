@@ -9,6 +9,10 @@ app = Flask(__name__)
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/ui-buttons')
+def ui_buttons():
+    return render_template('ui-buttons.html')
+
 @app.route('/404')
 def error404():
     return render_template('error.html', code='404', message='Page not found')

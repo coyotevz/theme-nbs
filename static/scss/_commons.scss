@@ -144,7 +144,7 @@ ul.main-menu {
         margin-bottom: 0;
       }
     }
-    
+
     .data-row {
       @include make-row();
       margin-bottom: 0;
@@ -206,6 +206,45 @@ ul.main-menu {
     border-style: $widget-border-style;
     border-width: 1px 1px 2px;
     padding: $widget-padding;
+    margin-bottom: 20px;
+  }
+
+  .widget-default {
+    .widget-header {
+      font-size: 12px;
+      color: #262626;
+      position: relative;
+
+      h3 {
+        font: 300 20px Roboto,Arial,sans-serif;
+        white-space: normal;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      .detail {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #999;
+      }
+    }
+
+    &:hover {
+      .detail {
+        color: #427fed;
+      }
+    }
+
+    .widget-body {
+      font-size: 13px;
+      color: #404040;
+      line-height: 1.4;
+      margin-top: 20px;
+    }
   }
 
   .widget-mini-box {
