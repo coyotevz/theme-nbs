@@ -16,6 +16,48 @@
     text-transform: uppercase;
   }
 
+  // Search form input
+  .search-box {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .input-group {
+    .form-control {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 4px 8px;
+      font-size: 16px;
+      border-color: rgba(0,0,0,0.15);
+      color: #222;
+      transition: none;
+      border-right-width: 0;
+      height: 30px;
+
+      &:hover {
+        border-color: rgba(0,0,0,0.3);
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: #4285f4;
+      }
+    }
+
+    .input-group-btn {
+      .btn {
+        width: 60px;
+        height: 30px;
+        border-radius: 2px;
+        padding: 3px 12px;
+        font-size: 15px;
+      }
+    }
+  }
+
   a {
     color: $topbar-color;
     &:hover { color: $topbar-color-hover; }
