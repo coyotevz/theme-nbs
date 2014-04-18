@@ -1,0 +1,63 @@
+/*
+ * Variables for Nobix theme
+ */
+
+// Colors
+$white:                 #ffffff;
+$gray:                  #555555;
+$light-gray:            #dddddd;
+$gray-0:                #404040;
+$gray-1:                #f5f5f5;
+$gray-2:                #e5e5e5;
+$black:                 #000000;
+
+
+// Fonts configuration
+$font-base-path:        "../fonts";
+$font-family:           Roboto,Arial,sans-serif;
+$font-size:             13px;
+
+$fa-font-path:          "../fonts/" !default;
+$fa-font-name:          "fontawesome-webfont" !default;
+
+// Body style
+$body-color:            $gray;
+$body-color-2:          #767676;
+$body-bg:               $gray-1;
+
+// Variant colors
+$primary-bg:            #1c7ebb;
+$primary-light-bg:      #449dd5;
+$success-bg:            #23ae89;
+$info-bg:               #2ec1cc;
+$warning-bg:            #ffb61c;
+$danger-bg:             #e94b3b;
+$orange-bg:             #f98e33;
+$violet-bg:             #6a55c2;
+$dark-bg:               #222533;
+$bright-bg:             #fafafa;
+$facebook-bg:           #335397;
+$twitter-bg:            #00c7f7;
+$google-plus-bg:        #df4a32;
+
+// Top Bar
+$topbar-vert-padding:   5px;
+$topbar-horiz-padding:  0;
+$topbar-height:         60px;
+$topbar-bg:             $white;
+$topbar-color:          $gray;
+$topbar-color-hover:    $black;
+$count-bg:              #e60404;
+
+// Side bar
+$main-menu-item-border: #dfdfdf;
+$main-menu-item-bg:     #ececec;
+$main-menu-item-color:  $gray;
+
+
+// Widgets
+$widget-bg:             $white;
+$widget-border-color:   #d8d8d8;
+$widget-border-radius:  3px;
+$widget-border-style:   solid;
+$widget-padding:        20px;

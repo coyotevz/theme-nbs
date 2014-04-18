@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/404')
+def error404():
+    return render_template('error.html', code='404', message='Page not found')
+
+@app.route('/500')
+def error500():
+    return render_template('error.html', code='500', message="Something's wrong with server")
+
+if __name__ == '__main__':
+    app.run('0', 8002, debug=True)

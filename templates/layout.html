@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js" lang="es-ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="General Layout for Nobix theme">
+    <meta name="author" content="Augusto Roccasalva [augusto@rocctech.com.ar]">
+    <meta name="viewport" content="with=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <title>Nobix Theme</title>
+
+    <link rel="stylesheet" href="/static/css/nobix.css" type="text/css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="top-bar">{% block topbar %}{% endblock %}</div>
+      <div class="main">{% block main %}{% endblock %}</div>
+      <footer class="footer">{% block footer %}{% endblock %}</footer>
+    </div>
+  </body>
+</html>
+
+{# vim:sw=2:ft=jinja
+#}
