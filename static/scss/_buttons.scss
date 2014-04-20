@@ -2,6 +2,49 @@
  * Buttons style overwrite
  */
 
+@mixin build-button-variant($color, $bg, $bg-hover, $border-hover, $bg-active, $border-active) {
+  color: $color;
+  background-color: $bg;
+  border: 1px solid rgba(0,0,0,0);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+
+  &:hover {
+    background-color: $bg-hover;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) $border-hover;
+    @include box-shadow(inset 0 -1px 0 $border-hover);
+  }
+}
+
 .btn {
+  font-weight: $button-font-weight;
+  border: 1px solid $button-border-color;
+  background-color: $button-background-color;
+  @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-line-height, $button-border-radius);
+  @include transition(all 0.118s ease 0s);
+  color: lighten($button-font-color, 37);
+
   i { margin-right: 4px; }
+
+  &:hover {
+    @include box-shadow(0 1px 0 $button-shadow-color-hover);
+    border-color: $button-border-color-hover;
+  }
+
+  &:hover,
+  &:focus {
+    color: $button-font-color;
+  }
+
+  &:active,
+  &.active {
+    color: #262626;
+    background-color: $button-background-active-color;
+    border-color: $button-border-color-hover;
+    @include box-shadow(0 1px 0 #ddd inset);
+  }
+
+  &.btn-icon {
+    min-width: $button-min-width;
+  }
 }

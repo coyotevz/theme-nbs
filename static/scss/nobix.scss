@@ -2,17 +2,17 @@
  * Custom Bootstrap mod for Nobix
  */
 
-// Custom variables
-@import "variables";
-
-// Custom fonts
-@import "fonts";
-
 // Bootstrap v3.0.0 base (individual files)
 
 // Core variables and mixins
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
+
+// Custom variables
+@import "variables";
+
+// Custom fonts
+@import "fonts";
 
 // Custom mixins that overwrites default mixins
 @import "custom-mixins";
@@ -64,6 +64,9 @@
 @import "mixins";
 
 
-@import "commons";
 @import "buttons";
+@import "widgets";
 @import "topbar";
+@import "sidebar";
+@import "page";
+@import "commons";

@@ -1,79 +1,64 @@
-{% extends "layout.html" %}
+{% extends "page.html" %}
 
-{% block topbar %}
-{% include "_topbar.html" %}
-{% endblock %}
-
-{% block main %}
-<div class="container-fluid">
+{% block page %}
+<div class="page page-dashboard">
   <div class="row">
-    {% include "_sidebar.html" %}
-
-    <div class="col-md-10 page page-dashboard">
-      <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-8">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+    </div>
+  </div>
+  <div class="main-header">
+    <h3>Dashboard</h3>
+    <em>the first priority information</em>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="widget widget-mini-box">
+        <span class="mini-box-icon bg-success">
+          <i class="fa fa-rocket"></i>
+        </span>
+        <div class="mini-box-info">
+          <p class="info-title">25 <span class="info-title-sub">%</span></p>
+          <p class="text-muted">Growth</p>
         </div>
       </div>
-      <div class="main-header">
-        <h3>Dashboard</h3>
-        <em>the first priority information</em>
+    </div>
+    <div class="col-md-3">
+      <div class="widget widget-mini-box">
+        <span class="mini-box-icon bg-info">
+          <i class="fa fa-users"></i>
+        </span>
+        <div class="mini-box-info">
+          <p class="info-title">112</p>
+          <p class="text-muted">New users</p>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="widget widget-mini-box">
-            <span class="mini-box-icon bg-success">
-              <i class="fa fa-rocket"></i>
-            </span>
-            <div class="mini-box-info">
-              <p class="info-title">25 <span class="info-title-sub">%</span></p>
-              <p class="text-muted">Growth</p>
-            </div>
-          </div>
+    </div>
+    <div class="col-md-3">
+      <div class="widget widget-mini-box">
+        <span class="mini-box-icon bg-danger">
+          <i class="fa fa-dollar"></i>
+        </span>
+        <div class="mini-box-info">
+          <p class="info-title">4.550</p>
+          <p class="text-muted">Profit</p>
         </div>
-        <div class="col-md-3">
-          <div class="widget widget-mini-box">
-            <span class="mini-box-icon bg-info">
-              <i class="fa fa-users"></i>
-            </span>
-            <div class="mini-box-info">
-              <p class="info-title">112</p>
-              <p class="text-muted">New users</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="widget widget-mini-box">
-            <span class="mini-box-icon bg-danger">
-              <i class="fa fa-dollar"></i>
-            </span>
-            <div class="mini-box-info">
-              <p class="info-title">4.550</p>
-              <p class="text-muted">Profit</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="widget widget-mini-box">
-            <span class="mini-box-icon bg-warning">
-              <i class="fa fa-shopping-cart"></i>
-            </span>
-            <div class="mini-box-info">
-              <p class="info-title">262</p>
-              <p class="text-muted">Sales</p>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="widget widget-mini-box">
+        <span class="mini-box-icon bg-warning">
+          <i class="fa fa-shopping-cart"></i>
+        </span>
+        <div class="mini-box-info">
+          <p class="info-title">262</p>
+          <p class="text-muted">Sales</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 {% endblock %}
-
-{% block footer %}
-<span>© 2014 Copyright</span>
-{% endblock %}
-
 {# vim:sw=2:ft=jinja
 #}

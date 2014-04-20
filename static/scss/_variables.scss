@@ -9,7 +9,10 @@ $light-gray:            #dddddd;
 $gray-0:                #404040;
 $gray-1:                #f5f5f5;
 $gray-2:                #e5e5e5;
+$gray-dark:             #262626;
 $black:                 #000000;
+
+$link-color:            #427fed;
 
 
 // Fonts configuration
@@ -50,9 +53,10 @@ $topbar-color-hover:    $black;
 $count-bg:              #e60404;
 
 // Side bar
-$main-menu-item-border: #dfdfdf;
-$main-menu-item-bg:     #ececec;
-$main-menu-item-color:  $gray;
+$menu-item-border:      #dfdfdf;
+$menu-item-bg:          $white;
+$menu-item-bg-active:   #eee;
+$menu-item-color:       $gray-dark;
 
 
 // Widgets
@@ -61,3 +65,23 @@ $widget-border-color:   #d8d8d8;
 $widget-border-radius:  3px;
 $widget-border-style:   solid;
 $widget-padding:        20px;
+
+
+// Buttons
+$button-padding-vertical:       $padding-base-vertical;
+$button-padding-horizontal:     $padding-base-horizontal;
+$button-min-width:              72px;
+$button-font-color:             #222;
+$button-font-family:            $font-family;
+$button-font-size:              12px;
+$button-font-weight:            bold;
+$button-line-height:            inherit;
+$button-border-color:           rgba(0,0,0,0.05);
+$button-border-color-hover:     #bfbfbf;
+$button-border-radius:          2px;
+$button-border-focused-color:   #4d90fe;
+$button-background-color:       $white;
+$button-background-active-color:$gray-2;
+$button-hihg-background-color:  #f1f1f1;
+$button-shadow-color:           rgba(0,0,0,0.05);
+$button-shadow-color-hover:     rgba(0,0,0,0.1);
