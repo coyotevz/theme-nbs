@@ -5,8 +5,9 @@
 @mixin build-button-variant($color, $bg, $bg-hover, $border-hover, $bg-active, $border-active) {
   color: $color;
   background-color: $bg;
-  border: 1px solid rgba(0,0,0,0);
+  border: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  @include box-shadow(0 1px 0 rgba(0,0,0,0.05));
   text-shadow: 0 1px 0 rgba(0,0,0,0.1);
 
   &:hover {
@@ -17,6 +18,82 @@
 }
 
 .btn {
+  i { margin-right: 4px; }
+
+  cursor: default;
+  font-weight: $button-font-weight;
+  outline: 0 none;
+  border: 1px solid transparent;
+  @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-line-height, $button-border-radius);
+
+  &.btn-icon {
+    min-width: $button-min-width;
+  }
+}
+
+.btn-default {
+  color: #404040;
+  border-color: rgba(0,0,0,0.15);
+  background-color: $white;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $white;
+  }
+
+  &:hover {
+    border-color: #b8b8b8;
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+  }
+
+  &:active,
+  &.active {
+    border-color: #b8b8b8;
+    @include box-shadow(0 2px 0 #ddd inset);
+  }
+
+  &:focus {
+    outline: 4px solid #c7dcfc;
+    border-color: #d9d9d9;
+  }
+}
+
+.btn-primary,
+.btn-info,
+.btn-success,
+.btn-warning,
+.btn-danger {
+  color: $white;
+  border-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $white;
+    border-color: transparent;
+  }
+}
+
+@mixin custom-button-variant($color) {
+  background-color: $color;
+  $light-color: saturate(lighten($color, 4), 7);
+  $dark-color: desaturate(darken($color, 24), 29);
+
+  &:hover {
+    background-color: $light-color;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) $dark-color;
+    @include box-shadow(0 -1px 0 $dark-color inset);
+  }
+}
+
+.btn-primary {
+  @include custom-button-variant(#427fed);
+}
+
+.btn-old {
   font-weight: $button-font-weight;
   border: 1px solid $button-border-color;
   background-color: $button-background-color;
@@ -44,7 +121,125 @@
     @include box-shadow(0 1px 0 #ddd inset);
   }
 
-  &.btn-icon {
-    min-width: $button-min-width;
+}
+
+.btn-default-old {
+  color: #404040;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 2px;
+  background-color: #fff;
+  background-image: -moz-linear-gradient(center top, rgba(0,0,0,0), rgba(0,0,0,0));
+  cursor: default;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 72px;
+  outline: 0 none;
+  padding: 6px 12px;
+
+  &:hover {
+    border: 1px solid #b8b8b8;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+
+  &:active {
+    border: 1px solid #b8b8b8;
+    box-shadow: 0 2px 0 #ddd inset;
+    background-color: #fff;
+  }
+
+  &:focus {
+    background-color: $white;
+    outline: 4px solid #c7dcfc;
+    border: 1px solid #d9d9d9;
   }
 }
+
+.btn-primary-old {
+  background-color: #427fed;
+  border: 1px solid rgba(0,0,0,0);
+  color: $white;
+
+  &:hover {
+    background-color: #4285f4;
+    color: $white;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) #2f69c2;
+    box-shadow: 0 -1px 0 #2f69c2 inset;
+  }
+
+  &:active {
+    background-color: #4285f4;
+    box-shadow: 0 1px 0 #21448d inset;
+    color: $white;
+    border: 1px solid rgba(0,0,0,0);
+  }
+}
+
+.btn-success {
+  background-color: #53a93f;
+  border: 1px solid rgba(0,0,0,0);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  color: $white;
+
+  &:hover {
+    background-color: #65b045;
+    color: $white;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) #4c8534;
+    box-shadow: 0 -1px 0 #4c8534 inset;
+  }
+
+  &:active {
+    background-color: #65b045;
+    color: $white;
+    border: 1px solid rgba(0,0,0,0);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.15) inset;
+  }
+}
+
+.btn-danger {
+  background-color: #d73d32;
+  border: 1px solid rgba(0,0,0,0);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  color: $white;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+
+  &:hover {
+    background-color: #e74b37;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) #bd3d2a;
+    box-shadow: 0 -1px 0 #bd3d2a inset;
+    color: $white;
+  }
+
+  &:active {
+    background-color: #e74b37;
+    color: $white;
+    border: 1px solid rgba(0,0,0,0);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  }
+}
+
+/*
+.btn-default {
+  //@include build-button-variant(#404040, #fff, #fff, #b8b8b8, #fff, #b8b8b8);
+  color: #404040;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.15);
+  background-color: $white;
+  background-image: -moz-linear-gradient(center top, rgba(0,0,0,0), rgba(0,0,0,0));
+  &:hover {
+    background-color: $white;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    border: 1px solid #b8b8b8;
+  }
+
+  border-radius: 2px;
+  cursor: default;
+  font-size: 12px;
+  font-weight: bold;
+  height: 28px;
+  line-height: 28px;
+  min-width: 54px;
+  outline: 0 none;
+  padding: 0 8px;
+  text-align: center;
+}*/
