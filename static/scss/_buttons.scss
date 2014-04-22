@@ -3,7 +3,7 @@
  */
 
 .btn {
-  i { margin-right: 4px; }
+  i + span { margin-left: 4px; }
   span.glyphicon {
     margin-right: 2px;
     top: 2px;
