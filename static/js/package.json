@@ -1,0 +1,12 @@
+{
+  "name": "theme-nbs",
+  "author": "Augusto Roccasalva",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "almond": "~0.2.9"
+  }
+}

@@ -2,13 +2,19 @@
  * Page style
  */
 
+.scroll-container {
+  overflow-y: hidden;
+  padding-right: 0;
+
+  .scroll-wrapper {
+    overflow-y: auto;
+    padding-right: 15px;
+  }
+}
+
 .page {
   padding-top: 15px;
   padding-bottom: 15px;
-
-  .scroll-container {
-    overflow-y: auto;
-  }
 
   .main-header {
     margin-bottom: 15px;

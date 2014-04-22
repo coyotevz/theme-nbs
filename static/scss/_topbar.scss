@@ -143,3 +143,20 @@
     border-radius: 50%;
   }
 }
+
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+
+  & + .main {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 200;
+  }
+}
