@@ -1,4 +1,4 @@
-"use strict";
+/* jshint strict:true */
 
 var requirejs = {
 
