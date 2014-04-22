@@ -4,21 +4,42 @@
 
 .btn {
   i { margin-right: 4px; }
-
-  cursor: default;
-  font-weight: $button-font-weight;
-  outline: 0 none;
-  border: 1px solid transparent;
-  @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-line-height, $button-border-radius);
-
-  &.btn-icon {
-    min-width: $button-min-width;
+  span.glyphicon {
+    margin-right: 2px;
+    top: 2px;
   }
 
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: $button-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: default;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-line-height, $button-border-radius);
+  @include user-select(none);
+
+  &:hover,
   &:focus,
   &:active:focus,
   &.active:focus {
     outline: 0 none;
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+
+  &.btn-icon {
+    min-width: $button-min-width;
   }
 }
 
@@ -132,4 +153,59 @@
 
 .btn-danger {
   @include custom-button-variant(#d73d32);
+}
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+
+  & + & {
+    margin-top: 5px;
+  }
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
 }

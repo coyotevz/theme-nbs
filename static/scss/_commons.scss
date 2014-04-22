@@ -13,10 +13,12 @@ h1, h2 {
   font-family: "Lato";
 }
 
-.btn {
-  span.glyphicon {
-    margin-right: 2px;
-    top: 2px;
+a {
+  &,
+  &:active,
+  &:focus,
+  &:hover {
+    outline: 0 none;
   }
 }
 
