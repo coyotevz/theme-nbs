@@ -13,6 +13,10 @@ def dashboard():
 def ui_buttons():
     return render_template('ui-buttons.html')
 
+@app.route('/tables')
+def tables():
+    return render_template('tables.html')
+
 @app.route('/404')
 def error404():
     return render_template('error.html', code='404', message='Page not found')
