@@ -25,8 +25,15 @@ require([
   $(window).on('resize', _.debounce(resize, 150));
   $(window).on('focus', resize);
 
+  var setActive = function() {
+    $('.main-nav .menu li').removeClass('active');
+    var path = window.location.pathname;
+    $('.main-nav .menu a[href="' + path + '"]').parent().addClass('active');
+  };
+
   $(document).ready(function() {
     $('.scroll-wrapper').on('scroll', scrolled);
+    setActive();
     resize();
   });
 });
