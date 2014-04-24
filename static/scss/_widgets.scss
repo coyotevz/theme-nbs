@@ -44,6 +44,12 @@
     color: #404040;
     line-height: 1.4;
     margin-top: 10px;
+
+    &.no-padding {
+      margin-left: -$widget-padding;
+      margin-right: -$widget-padding;
+      margin-bottom: -$widget-padding;
+    }
   }
 }
 
