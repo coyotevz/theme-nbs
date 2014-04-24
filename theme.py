@@ -17,6 +17,10 @@ def ui_buttons():
 def tables():
     return render_template('tables.html')
 
+@app.route('/panels')
+def panels():
+    return render_template('panels.html')
+
 @app.route('/404')
 def error404():
     return render_template('error.html', code='404', message='Page not found')
