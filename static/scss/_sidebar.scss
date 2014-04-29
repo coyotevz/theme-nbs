@@ -152,10 +152,8 @@
 
     .progress {
       margin-bottom: 0;
-    }
-
-    .progress-xs {
-      height: 5px;
+      border-radius: 0;
+      box-shadow: none;
     }
   }
 }

@@ -15,7 +15,8 @@
     color: #262626;
     position: relative;
 
-    h3 {
+    h3, // TODO: Delete this rule, temporary
+    .widget-title {
       font: 300 20px Roboto,Arial,sans-serif;
       white-space: normal;
       margin: 0;
@@ -23,6 +24,18 @@
       text-overflow: ellipsis;
       vertical-align: middle;
       display: inline-block;
+    }
+
+    .widget-header-controls {
+      float: right;
+      height: 26px;
+      min-width: 26px;
+
+      .progress {
+        margin-bottom: 8px;
+        margin-top: 8px;
+        height: 10px
+      }
     }
 
     .detail {

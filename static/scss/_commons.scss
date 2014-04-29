@@ -25,13 +25,20 @@ a {
 
 .progress {
   background-color: #e2e2e2;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 2px;
 
   .progress-bar {
     transition-duration: 3s;
     transition-property: width;
     transition-timing-function: ease;
+  }
+
+  &.progress-xs {
+    height: 5px;
+  }
+
+  &.progress-md {
+    height: 10px;
   }
 }
 
