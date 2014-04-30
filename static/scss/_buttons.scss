@@ -18,6 +18,7 @@
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
+  @include box-shadow(0 1px 0 rgba(0,0,0,0.05));
   @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-line-height, $button-border-radius);
   @include user-select(none);
 
@@ -53,12 +54,14 @@
 .btn-xs {
   @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $button-border-radius);
   font-weight: normal;
+  &.btn:hover {
+    @include box-shadow(none);
+  }
 }
 
 .btn-default {
   color: #404040;
   border-color: #d9d9d9;
-  @include box-shadow(0 1px 0 rgba(0,0,0,0.05));
   background-color: $white;
 
   &:hover,

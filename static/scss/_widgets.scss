@@ -41,6 +41,12 @@
           height: 6px
         }
       }
+
+      & > .btn,
+      .btn-group {
+        margin-top: 2px;
+        margin-bottom: 3px;
+      }
     }
 
     .detail {
