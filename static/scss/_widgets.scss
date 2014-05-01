@@ -12,9 +12,7 @@
     display: block;
     height: 10px;
   }
-}
 
-.widget-default {
   .widget-header {
     font-size: 12px;
     color: #262626;
@@ -82,7 +80,6 @@
     font-size: 13px;
     color: #404040;
     line-height: 1.4;
-    margin-top: 10px;
 
     &.no-padding {
       margin-left: -$widget-padding;
@@ -126,6 +123,11 @@
       }
     }
   }
+
+  .widget-header + .widget-body {
+    margin-top: 10px;
+  }
+
 }
 
 .widget-box,
@@ -227,6 +229,37 @@
     font-size: $font-size-h2;
     span {
       font-size: $font-size-h4;
+    }
+  }
+}
+
+// Colored top borders
+.widget {
+  &.border-colored {
+    border-top-width: 4px;
+    border-top-style: solid;
+    border-top-color: $bright-bg;
+  }
+
+  &.border-primary       { border-top-color: $primary-bg; }
+  &.border-primary-light { border-top-color: $primary-light-bg; }
+  &.border-success       { border-top-color: $success-bg; }
+  &.border-info          { border-top-color: $info-bg; }
+  &.border-warning       { border-top-color: $warning-bg; }
+  &.border-danger        { border-top-color: $danger-bg; }
+  &.border-orange        { border-top-color: $orange-bg; }
+  &.border-violet        { border-top-color: $violet-bg; }
+  &.border-dark          { border-top-color: $dark-bg; }
+  &.border-bright        { border-top-color: $bright-bg; }
+  &.border-facebook      { border-top-color: $facebook-bg; }
+  &.border-twitter       { border-top-color: $twitter-bg; }
+  &.border-google-plus   { border-top-color: $google-plus-bg; }
+
+  &.bg-colored {
+    border-width: 0;
+    .widget-header,
+    .widget-body {
+      color: inherit;
     }
   }
 }

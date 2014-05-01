@@ -48,7 +48,7 @@ a {
 }
 
 .bg-primary       { @include custom-bg-variant($primary-bg, $white); }
-.bg-primary-ligtn { @include custom-bg-variant($primary-light-bg, $white); }
+.bg-primary-light { @include custom-bg-variant($primary-light-bg, $white); }
 .bg-success       { @include custom-bg-variant($success-bg, $white); }
 .bg-info          { @include custom-bg-variant($info-bg, $white); }
 .bg-warning       { @include custom-bg-variant($warning-bg, $white); }
