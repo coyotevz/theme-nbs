@@ -2,8 +2,22 @@
  * Buttons style overwrite
  */
 
+@mixin fa-sizes() {
+  .fa { font-size: 14px; }
+  .fa-lg {
+    font-size: (4em / 3);
+    line-height: (3em / 4);
+    vertical-align: -15%;
+  }
+  .fa-2x { font-size: 2em; }
+  .fa-3x { font-size: 3em; }
+  .fa-4x { font-size: 4em; }
+  .fa-5x { font-size: 5em; }
+}
+
 .btn {
   i + span { margin-left: 4px; }
+  @include fa-sizes();
   span.glyphicon {
     margin-right: 2px;
     top: 2px;
@@ -27,6 +41,11 @@
   &:active:focus,
   &.active:focus {
     outline: 0 none;
+  }
+
+  &:hover,
+  &:focus {
+    //color: #404040;
     text-decoration: none;
   }
 
@@ -67,6 +86,7 @@
   &:hover,
   &:focus,
   &:active {
+    color: #404040;
     background-color: $white;
   }
 
