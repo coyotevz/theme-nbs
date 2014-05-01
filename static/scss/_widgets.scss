@@ -7,6 +7,11 @@
   border-width: 1px 1px 2px;
   padding: $widget-padding;
   margin-bottom: 20px;
+
+  .divider {
+    display: block;
+    height: 10px;
+  }
 }
 
 .widget-default {
@@ -77,8 +82,14 @@
   }
 }
 
+.widget-box,
+.widget-mini-box {
+  font-family: Lato;
+
+  p { margin: 0; }
+}
+
 .widget-box {
-  //font-family: Lato;
   padding: 0;
   display: table;
   table-layout: fixed;
@@ -86,27 +97,73 @@
   width: 100%;
   height: 100%;
 
-  .widget-left,
-  .widget-right {
-    width: 50%;
+  .widget-item {
+    display: table-cell;
+    width: 1%;
+    vertical-align: top;
+    padding: 30px;
+  }
+
+  .list-justified-container {
+    padding: 15px 0;
+
+    ul.list-justified {
+      display: table;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+
+
+      > li {
+        border-right: 1px solid #eee;
+        display: table-cell;
+        float: none;
+        padding: 10px;
+        width: 1%;
+
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+
+    .info-title {
+      font-size: $font-size-h3;
+    }
   }
 
   .widget-left {
-    float: left;
+    @include border-left-radius($widget-border-radius);
   }
 
   .widget-right {
-    float: right;
+    @include border-right-radius($widget-border-radius);
   }
 
   .widget-top,
   .widget-bottom {
     height: 50%;
   }
+
+  .widget-top {
+    @include border-top-radius($widget-border-radius);
+    padding: 30px 20px;
+  }
+
+  .widget-bottom {
+    @include border-bottom-radius($widget-border-radius);
+    padding: 10px;
+  }
+
+  .info-title {
+    font-size: $font-size-h1;
+    span {
+      font-size: $font-size-h4;
+    }
+  }
 }
 
 .widget-mini-box {
-  //font-family: Lato;
   font-size: 14px;
   min-height: 105px;
   color: #767676;
@@ -130,6 +187,4 @@
       font-size: $font-size-h4;
     }
   }
-
-  p { margin: 0; }
 }
