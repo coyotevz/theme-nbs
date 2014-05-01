@@ -35,6 +35,16 @@
       height: 26px;
       min-width: 26px;
 
+      .widget-header-icon {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 4px;
+
+        .fa {
+          margin: 4px 0;
+        }
+      }
+
       .progress {
         margin-bottom: 8px;
         margin-top: 8px;
@@ -79,6 +89,42 @@
       margin-right: -$widget-padding;
       margin-bottom: -$widget-padding;
     }
+
+    .body-section {
+      margin-bottom: 20px;
+
+      .body-section-title {
+        border-bottom: 1px solid #dadada;
+        margin-bottom: 12px;
+        padding-bottom: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #262626;
+        display: block;
+      }
+    }
+
+    .info-horizontal {
+      display: table;
+      width: 100%;
+      .info-row {
+        display: table-row;
+        .info-label,
+        .info-data {
+          display: table-cell;
+          padding: 1px;
+        }
+        .info-label {
+          font-weight: bold;
+          padding-right: 16px;
+          white-space: nowrap;
+        }
+        .info-data {
+          word-wrap: break-word;
+          white-space: normal;
+        }
+      }
+    }
   }
 }
 
@@ -104,33 +150,29 @@
     padding: 30px;
   }
 
-  .list-justified-container {
-    padding: 15px 0;
-
-    ul.list-justified {
-      display: table;
-      list-style: none;
-      padding: 0;
-      width: 100%;
-
-
-      > li {
-        border-right: 1px solid #eee;
-        display: table-cell;
-        float: none;
-        padding: 10px;
-        width: 1%;
-
-        &:last-child {
-          border: none;
-        }
-      }
-    }
+  ul.list-justified {
+    display: table;
+    list-style: none;
+    padding: 0;
+    width: 100%;
 
     .info-title {
       font-size: $font-size-h3;
     }
+
+    > li {
+      border-right: 1px solid #eee;
+      display: table-cell;
+      float: none;
+      padding: 10px;
+      width: 1%;
+
+      &:last-child {
+        border: none;
+      }
+    }
   }
+
 
   .widget-left {
     @include border-left-radius($widget-border-radius);

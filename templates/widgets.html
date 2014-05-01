@@ -2,6 +2,11 @@
 
 {% block page %}
 <div class="page page-widgets">
+  <div class="main-header">
+    <h3>Widgets</h3>
+    <em>common container for most viewable elements</em>
+  </div>
+
   <div class="row">
     <div class="col-md-6">
       <div class="widget">
@@ -61,18 +66,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="widget widget-mini-box">
-            <div class="mini-box-icon bg-info"><i class="fa fa-info"></i></div>
-            <div class="mini-box-info">
-              <p class="info-title">Mini<span class="info-title-sub">Box</span></p>
-              <p class="text-muted">Widget</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="widget widget-default">
         <div class="widget-header">
           <span class="widget-title">With buttons</span>
@@ -98,9 +91,26 @@
           Widget body content
         </div>
       </div>
+      <div class="widget widget-default">
+        <div class="widget-header">
+          <span class="widget-title">With icon</span>
+          <div class="widget-header-controls">
+            <div class="widget-header-icon">
+              <i class="fa fa-inbox"></i>
+            </div>
+          </div>
+        </div>
+        <div class="widget-body">
+          Widget body content
+        </div>
+      </div>
     </div>
   </div>
 
+  <div class="main-header">
+    <h3>Box Widgets</h3>
+    <em>special container for summary elements</em>
+  </div>
   <div class="row">
     <div class="col-md-6">
       <div class="widget widget-box">
@@ -121,7 +131,7 @@
               <i class="fa fa-facebook fa-4x"></i>
               <div class="divider divider"></div>
             </div>
-            <div class="list-justified-container bg-reverse">
+            <div class="widget-bottom bg-reverse">
               <ul class="list-justified text-center">
                 <li>
                   <p class="info-title">575</p>
@@ -143,7 +153,7 @@
               <i class="fa fa-twitter fa-4x"></i>
               <div class="divider divider"></div>
             </div>
-            <div class="list-justified-container bg-reverse">
+            <div class="widget-bottom bg-reverse">
               <ul class="list-justified text-center">
                 <li>
                   <p class="info-title">575</p>
@@ -181,6 +191,59 @@
             <div class="widget-bottom bg-reverse">
               <p class="info-title">369</p>
               <p class="text-muted">Sales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="widget widget-mini-box">
+            <div class="mini-box-icon bg-info"><i class="fa fa-info"></i></div>
+            <div class="mini-box-info">
+              <p class="info-title">Mini<span class="info-title-sub">Box</span></p>
+              <p class="text-muted">Widget</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main-header">
+    <h3>Box Widgets</h3>
+    <em>special container for summary elements</em>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="widget widget-default">
+        <div class="widget-header">
+          <span class="widget-title">Contact Information</span>
+        </div>
+        <div class="widget-body">
+          <div class="body-section">
+            <span class="body-section-title">Personal</span>
+            <div class="info-horizontal">
+              <div class="info-row">
+                <span class="info-label">Teléfono</span>
+                <span class="info-data">011345690</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Celular</span>
+                <span class="info-data">261569384</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">ID Radio</span>
+                <span class="info-data">456*434</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Correo</span>
+                <span class="info-data">jon@doe.com</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Dirección</span>
+                <span class="info-data">Street 123, Avenue 45, Country</span>
+              </div>
             </div>
           </div>
         </div>
