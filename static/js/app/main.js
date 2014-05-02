@@ -2,7 +2,8 @@
 require([
   'jquery',
   'underscore',
-], function($, _) {
+  'charts',
+], function($, _, charts) {
   "use strict";
 
   var version = $().jquery;
@@ -35,5 +36,6 @@ require([
     $('.scroll-wrapper').on('scroll', scrolled);
     setActive();
     resize();
+    charts();
   });
 });

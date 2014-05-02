@@ -1,6 +1,10 @@
+// Flot chart sample
+define([
+  'jquery',
+  'jquery.flot',
+], function($) {
+  "use strict";
 
-
-function flotchart() {
   var data1 = [
     [1, 43],
     [2, 35],
@@ -30,74 +34,79 @@ function flotchart() {
     [12, 25],
   ];
 
-  var plot = $.plot($("#chart"), [{
-    data: data1,
-    label: "2012"
-  }, {
-    data: data2,
-    label: "2013"
-  }], {
-    series: {
-      lines: {
-        show: true,
-        lineWidth: 1,
-        fill: true,
-        fillColor: {
-          colors: [{
-            opacity: 0.05
-          }. {
-            opacity: 0.09
-          }]
+  console.log('charts module pre');
+
+  return function() {
+    console.log('charts module in func');
+    var plot = $.plot($("#chart"), [{
+      data: data1,
+      label: "2012"
+    }, {
+      data: data2,
+      label: "2013"
+    }], {
+      series: {
+        lines: {
+          show: true,
+          lineWidth: 1,
+          fill: true,
+          fillColor: {
+            colors: [{
+              opacity: 0.05
+            }, {
+              opacity: 0.09
+            }]
+          }
+        },
+        points: {
+          show: true,
+          lineWidth: 2,
+          radius: 3
+        },
+        shadowSize: 0,
+        stack: true
+      },
+      grid: {
+        hoverable: true,
+        clickable: true,
+        tickColor: "#f9f9f9",
+        borderWidth: 0
+      },
+      legend: {
+        //show: false,
+        labelBoxBorderColor: "#fff"
+      },
+      colors: ["#94aec4", "#3473a9"],
+      xaxis: {
+        ticks: [
+          [1,  "ENE"],
+          [2,  "FEB"],
+          [3,  "MAR"],
+          [4,  "ABR"],
+          [5,  "MAY"],
+          [6,  "JUN"],
+          [7,  "JUL"],
+          [8,  "AGO"],
+          [9,  "SEP"],
+          [10, "OCT"],
+          [11, "NOV"],
+          [12, "DIC"]
+        ],
+        font: {
+          size: 12,
+          family: "OpenSans,arial,sans-serif",
+          variant: "small-caps",
+          color: "#9da3a9"
         }
       },
-      points: {
-        show: true,
-        lineWidth: 2,
-        radius: 3
-      },
-      shadowSize: 0,
-      stack: true
-    },
-    grid: {
-      hoverable: true,
-      clickable: true,
-      tickColor: "#f9f9f9",
-      borderWidth: 0
-    },
-    legend: {
-      //show: false,
-      labelBoxBorderColor: "#fff"
-    },
-    colors: ["#94aec4", "#3473a9"],
-    xaxis: {
-      ticks: [
-        [1, "ENE"],
-        [2, "FEB"],
-        [3, "MAR"],
-        [4, "ABR"],
-        [5, "MAY"],
-        [6, "JUN"],
-        [7, "JUL"],
-        [8, "AGO"],
-        [9, "SEP"],
-        [10, "OCT"],
-        [11, "NOV"],
-        [12, "DIC"]
-      ],
-      font: {
-        size: 12,
-        family: "OpenSans,arial,sans-serif",
-        variant: "small-caps",
-        color: "#9da3a9"
+      yaxis : {
+        ticks: 3,
+        tickDecimals: 0,
+        font: {
+          size: 12,
+          color: "#9da3a9"
+        }
       }
-    },
-    yaxis : {
-      ticks: 3,
-      tickDecimals: 0,
-      font: {
-        size: 12,
-        color: "#9da3a9"
-      }
-    }
-  });
-}
+    });
+  };
+});

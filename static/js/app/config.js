@@ -21,11 +21,35 @@ var requirejs = {
     'bootstrap.tab':          'vendor/bootstrap/tab',
     'bootstrap.tooltip':      'vendor/bootstrap/tooltip',
     'bootstrap.transition':   'vendor/bootstrap/transition',
+
+    // Flot
+    'jquery.flot':            'vendor/flot/jquery.flot-0.8.3',
+    'jquery.flot.canvas':     'vendor/flot/jquery.flot.canvas',
+    'jquery.flot.categories': 'vendor/flot/jquery.flot.categories',
+    'jquery.flot.crosshair':  'vendor/flot/jquery.flot.crosshair',
+    'jquery.flot.errorbars':  'vendor/flot/jquery.flot.errorbars',
+    'jquery.flot.fillbetween':'vendor/flot/jquery.flot.fillbetween',
+    'jquery.flot.image':      'vendor/flot/jquery.flot.image',
+    'jquery.flot.navigate':   'vendor/flot/jquery.flot.navigate',
+    'jquery.flot.pie':        'vendor/flot/jquery.flot.pie',
+    'jquery.flot.resize':     'vendor/flot/jquery.flot.resize',
+    'jquery.flot.selection':  'vendor/flot/jquery.flot.selection',
+    'jquery.flot.stack':      'vendor/flot/jquery.flot.stack',
+    'jquery.flot.symbol':     'vendor/flot/jquery.flot.symbol',
+    'jquery.flot.threshold':  'vendor/flot/jquery.flot.threshold',
+    'jquery.flot.time':       'vendor/flot/jquery.flot.time',
+    'jquery.colorherlpers':   'vendor/flot/jquery.colorherlpers',
+    'excanvas':               'vendor/flot/excanvas',
+
   },
 
   shim: {
+    'jquery': {
+      exports: '$',
+    },
+
     'underscore': {
-      exports: '_'
+      exports: '_',
     },
 
     // bootstrap dependecy matrix
@@ -41,6 +65,27 @@ var requirejs = {
     'bootstrap.tab':        { deps: ['jquery'] },
     'bootstrap.tooltip':    { deps: ['jquery'] },
     'bootstrap.transition': { deps: ['jquery'] },
+
+    'jquery.flot': {
+      exports: '$.plot',
+      deps: ['jquery'],
+    },
+
+    'jquery.flot.canvas':      { deps: ['jquery.flot'] },
+    'jquery.flot.categories':  { deps: ['jquery.flot'] },
+    'jquery.flot.crosshair':   { deps: ['jquery.flot'] },
+    'jquery.flot.errorbars':   { deps: ['jquery.flot'] },
+    'jquery.flot.fillbetween': { deps: ['jquery.flot'] },
+    'jquery.flot.image':       { deps: ['jquery.flot'] },
+    'jquery.flot.navigate':    { deps: ['jquery.flot'] },
+    'jquery.flot.pie':         { deps: ['jquery.flot'] },
+    'jquery.flot.resize':      { deps: ['jquery.flot'] },
+    'jquery.flot.selection':   { deps: ['jquery.flot'] },
+    'jquery.flot.stack':       { deps: ['jquery.flot'] },
+    'jquery.flot.symbol':      { deps: ['jquery.flot'] },
+    'jquery.flot.threshold':   { deps: ['jquery.flot'] },
+    'jquery.flot.time':        { deps: ['jquery.flot'] },
+    'jquery.colorhelpers':     { deps: ['jquery'] },
   },
 
   urlArgs: 'ver=' + (new Date()).getTime()
