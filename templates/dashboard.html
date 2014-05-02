@@ -67,6 +67,13 @@
         </div>
         <div class="widget-body">
           <div id="chart" class="flot-chart"></div>
+          <script type="text/javascript" charset="utf-8">
+            require(['jquery', 'charts'], function($, flotchart) {
+              $(document).ready(function() {
+                flotchart();
+              });
+            });
+          </script>
         </div>
       </div>
     </div>

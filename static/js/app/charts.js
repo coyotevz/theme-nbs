@@ -34,10 +34,7 @@ define([
     [12, 25],
   ];
 
-  console.log('charts module pre');
-
   return function() {
-    console.log('charts module in func');
     var plot = $.plot($("#chart"), [{
       data: data1,
       label: "2012"
