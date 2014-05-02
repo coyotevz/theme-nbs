@@ -7,7 +7,6 @@ var requirejs = {
   paths: {
     'jquery':                 'vendor/jquery-1.10.2',
     'underscore':             'vendor/lodash-2.4.1',
-    'domReady':               'vendor/domReady',
 
     // Bootstap files
     'bootstrap.affix':        'vendor/bootstrap/affix',
