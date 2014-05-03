@@ -1,0 +1,8 @@
+/*
+ * Custom mixins
+ */
+
+@mixin inline-block() {
+  display: inline-block;
+  position: relative;
+}
