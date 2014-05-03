@@ -149,3 +149,54 @@
   }
 }
 
+.table-nbx-toolbar {
+  @include clearfix;
+
+  border-bottom: 1px solid $toolbar-border-color;
+  padding-bottom: $toolbar-padding;
+
+  .table-title {
+    font: 300 20px Roboto,Arial,sans-serif;
+    line-height: 25px;
+    white-space: normal;
+    margin-right: 8px;
+    padding-right: 8px;
+    border-right: 1px solid #e5e5e5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    display: inline-block;
+    float: left;
+  }
+
+  .btn {
+    padding: 3px 16px;
+    color: #777;
+  }
+
+  .btn-thin {
+    padding: 3px 8px;
+  }
+
+  .pages {
+    float: left;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    line-height: 25px;
+    margin-right: 12px;
+
+  }
+
+  .btn-group {
+    float: left;
+
+    &.pull-right {
+      float: right;
+    }
+
+    & + .btn-group {
+      margin-left: 8px;
+    }
+  }
+}

@@ -61,3 +61,7 @@ a {
 .bg-facebook      { @include custom-bg-variant($facebook-bg, $white); }
 .bg-twitter       { @include custom-bg-variant($twitter-bg, $white); }
 .bg-google-plus   { @include custom-bg-variant($google-plus-bg, $white); }
+
+.btn-group + .btn-group {
+  margin-left: 16px;
+}

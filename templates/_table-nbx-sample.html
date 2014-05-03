@@ -24,10 +24,43 @@
 <div class="row">
   <div class="col-md-12">
     <div class="widget">
-      <div class="widget-header">
-        <span class="widget-title">Product Table</span>
-      </div>
       <div class="widget-body">
+        <div class="table-nbx-toolbar">
+          <span class="table-title">Products List Table</span>
+          <div class="btn-group">
+            <button class="btn btn-default" rel="tooltip" title="Recargar" name="reload">
+              <i class="fa fa-repeat"></i>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-default" rel="tooltip" title="Más Acciones" name="select" data-toggle="dropdown">
+              <span>Más</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action 1</a></li>
+              <li><a href="#">Action 2</a></li>
+              <li><a href="#">Action 3</a></li>
+            </ul>
+          </div>
+          <div class="btn-group hidden">
+            <button class="btn btn-default btn-thin" rel="tooltip" title="Test Button 1">Test Button</button>
+            <button class="btn btn-default btn-thin" rel="tooltip" title="Test Button 2">Test Button 2</button>
+          </div>
+          <div class="pager pull-right">
+            <div class="pages">
+              <span class="first">20120</span> - <span class="last">20390</span>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-thin btn-default" rel="tooltip" name="prev-page" title="Anterior">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button class="btn btn-thin btn-default" rel="tooltip" name="next-page" title="Siguiente" disabled>
+                <i class="fa fa-angle-right text-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
         <table class="table table-hover table-nbx productlist">
           <colgroup>
             <col class="col-active-indicator">
