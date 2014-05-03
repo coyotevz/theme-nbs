@@ -1,0 +1,77 @@
+{% macro product_row(id, sku, description='', modified='', price='0,00') -%}
+<tr>
+  <td class="cell-active"></td>
+  <td class="cell-checkbox">
+    <div class="control-checkbox">
+      <div class="control-checkbox-checkmark"></div>
+    </div>
+  </td>
+  <td class="cell-sku">
+    <a class="link-product-sku" href="#products/{{ id }}"><span class="product-sku cell-label-container">{{ sku }}</span></a>
+  </td>
+  <td class="cell-description">
+    <a class="link-product-description" href="#products/{{ id }}"><span class="product-description cell-label-container">{{ description }}</span></a>
+  </td>
+  <td class="cell-date">
+    <span class="product-modified cell-label-container">{{ modified }}</span>
+  </td>
+  <td class="cell-price">
+    <span class="product-price cell-label-container">{{ price }}</span>
+  </td>
+</tr>
+{%- endmacro %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="widget">
+      <div class="widget-header">
+        <span class="widget-title">Product Table</span>
+      </div>
+      <div class="widget-body">
+        <table class="table table-hover table-nbx productlist">
+          <colgroup>
+            <col class="col-active-indicator">
+            <col class="col-checkbox">
+            <col class="col-sku">
+            <col class="col-description">
+            <col class="col-date">
+            <col class="col-price">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="header-active-indicator"></th>
+              <th class="header-checkbox">
+                <div class="control-checkbox">
+                  <div class="control-checkbox-checkmark"></div>
+                </div>
+              </th>
+              <th class="header-sku header-sorted"> <span class="header-label">Código</span> </th>
+              <th class="header-description"><span class="header-label">Descripción</span></th>
+              <th class="header-date"><span class="header-label">Modificado</span></th>
+              <th class="header-price"><span class="header-label">Precio</span></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {{ product_row(1, '20120', 'CODO 90° HH Ø20 GEN FUSION', price='1,90') }}
+            {{ product_row(2, '20125', 'CODO 90° HH Ø25 GEN FUSION', price='3,29') }}
+            {{ product_row(3, '20132', 'CODO 90° HH Ø32 GEN FUSION', price='4,59') }}
+            {{ product_row(4, '20140', 'CODO 90° HH Ø40 GEN FUSION', price='10,18') }}
+            {{ product_row(5, '20150', 'CODO 90° HH Ø50 GEN FUSION', price='19,13') }}
+            {{ product_row(6, '20163', 'CODO 90° HH Ø63 GEN FUSION', price='28,71') }}
+            {{ product_row(7, '20175', 'CODO 90° HH Ø75 GEN FUSION', price='75,61') }}
+            {{ product_row(8, '20190', 'CODO 90° HH Ø90 GEN FUSION', price='156,55') }}
+            {{ product_row(9, '20320', 'TE HHH Ø20 GEN FUSION', price='2,52') }}
+            {{ product_row(10, '20325', 'TE HHH Ø25 GEN FUSION', price='4,77') }}
+            {{ product_row(11, '20332', 'TE HHH Ø32 GEN FUSION', price='6,95') }}
+            {{ product_row(12, '20340', 'TE HHH Ø40 GEN FUSION', price='15,24') }}
+            {{ product_row(13, '20350', 'TE HHH Ø50 GEN FUSION', price='27,51') }}
+            {{ product_row(14, '20363', 'TE HHH Ø63 GEN FUSION', price='39,95') }}
+            {{ product_row(15, '20375', 'TE HHH Ø75 GEN FUSION', price='89,87') }}
+            {{ product_row(16, '20390', 'TE HHH Ø90 GEN FUSION', price='191,85') }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
