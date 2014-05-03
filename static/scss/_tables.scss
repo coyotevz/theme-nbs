@@ -46,6 +46,7 @@
         white-space: nowrap;
         height: 28px;
         display: table-cell;
+        vertical-align: middle;
 
         &.header-active-indicator {
           border-bottom: transparent;
