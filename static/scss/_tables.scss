@@ -7,3 +7,62 @@
     margin-bottom: 0px;
   }
 }
+
+/*
+ * Nbx Table
+ */
+
+.table-nbx {
+
+  thead {
+    tr {
+      height: 26px;
+      color: $gray-darker;
+      font-size: 11px;
+
+      td, th { padding: 0; }
+
+      th {
+        background-color: $white;
+        font-weight: normal;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e5e5e5;
+        empty-cells: show;
+        overflow: hidden;
+        text-align: left;
+        white-space: nowrap;
+        display: table-cell;
+
+        &.header-active-indicator {
+          border-bottom: transparent;
+        }
+
+        &.header-checkbox {
+          text-align: center;
+        }
+
+        &.header-sorted {
+          color: #dd4b39;
+          font-weight: bold;
+        }
+
+        .header-label {
+          padding: 0 0 0 6px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          vertical-align: text-top;
+        }
+      }
+    }
+  }
+
+  &.productlist {
+    .col-active-indicator { width: 4px; }
+    .col-checkbox         { width: 23px; }
+    .col-sku              { width: 98px; }
+    .col-description      { width: 100%; }
+    .col-date             { width: 70px; }
+    .col-price            { width: 70px; }
+  }
+}
+
