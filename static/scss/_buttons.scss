@@ -178,6 +178,18 @@
   @include custom-button-variant(#d73d32);
 }
 
+.btn-icon, .btn-icon:focus {
+  background: rgba(0,0,0,0);
+  color: rgba(0,0,0,0.2);
+  font-size: 2em;
+  position: relative;
+  @include box-shadow(none);
+
+  &:hover {
+    color: rgba(0,0,0,0.4);
+  }
+}
+
 // Make a button look and behave like a link
 .btn-link {
   color: $link-color;
