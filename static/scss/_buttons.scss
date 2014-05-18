@@ -190,6 +190,23 @@
   }
 }
 
+.btn-tab {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  color: rgba(0,0,0,0.4);
+  border-radius: 0px;
+  box-shadow: none;
+  padding: 6px;
+
+  &:hover {
+    color: rgba(0,0,0,0.6);
+  }
+
+  .icon {
+    font-size: 13px;
+  }
+}
+
 // Make a button look and behave like a link
 .btn-link {
   color: $link-color;
