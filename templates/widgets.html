@@ -120,7 +120,47 @@
           <span class="widget-title">With tabs</span>
         </div>
         <div class="widget-body">
-          Widget body content
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#content1">Tab 1</a></li>
+            <li><a data-toggle="tab" href="#content2">Tab 2</a></li>
+            <li><a data-toggle="tab" href="#content3">Tab 3</a></li>
+            <li><button class="btn btn-link" name="add-tab" rel="tooltip" title="Add Tab"><i class="fa fa-plus"></i></button></li>
+          </ul>
+          <div class="tab-content">
+            <div id="content1" class="tab-pane fade in active">
+              <p>Tab Content 1</p>
+            </div>
+            <div id="content2" class="tab-pane fade">
+              <p>Tab Content 2</p>
+            </div>
+            <div id="content3" class="tab-pane fade">
+              <p>Tab Content 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header">
+          <span class="widget-title">With right aligned tabs</span>
+        </div>
+        <div class="widget-body">
+          <ul class="nav nav-tabs tabs-right">
+            <li><a data-toggle="tab" href="#r-content3">Tab 3</a></li>
+            <li><a data-toggle="tab" href="#r-content2">Tab 2</a></li>
+            <li class="active"><a data-toggle="tab" href="#r-content1">Tab 1</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="r-content1" class="tab-pane fade in active">
+              <p>Add <code>.tabs-right</code> to <code>.nav-tabs</code> and invert tab order.</p>
+            </div>
+            <div id="r-content2" class="tab-pane fade">
+              <p>Tab Content 2</p>
+            </div>
+            <div id="r-content3" class="tab-pane fade">
+              <p>Tab Content 3</p>
+            </div>
+          </div>
         </div>
       </div>
 

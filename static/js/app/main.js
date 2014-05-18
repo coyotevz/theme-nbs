@@ -2,6 +2,8 @@
 require([
   'jquery',
   'underscore',
+  'bootstrap.transition',
+  'bootstrap.tab',
 ], function($, _) {
   "use strict";
 
