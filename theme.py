@@ -13,6 +13,10 @@ def dashboard():
 def ui_buttons():
     return render_template('ui-buttons.html')
 
+@app.route('/forms')
+def forms():
+    return render_template('forms.html')
+
 @app.route('/tables')
 def tables():
     return render_template('tables.html')
