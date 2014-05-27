@@ -2,12 +2,34 @@
  * Nobix Forms elements
  */
 
+label {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.form-control {
+  @include box-shadow(none);
+
+  &:hover {
+    border-color: $input-border-hover;
+  }
+
+  &:focus {
+    @include box-shadow(none);
+    border-color: $input-border-focus;
+  }
+}
+
+.form-control-static {
+  font-size: $font-size-base;
+}
+
 // Checkmark
 .control-checkbox {
   @include inline-block;
   background-color: $white;
   border: 1px solid rgba(155,155,155,0.57);
-  border-radius: 1px;
+  border-radius: $input-border-radius;
   height: 13px;
   width: 13px;
   margin: 0 4px 0 1px;
