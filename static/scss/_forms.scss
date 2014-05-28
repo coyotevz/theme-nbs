@@ -24,6 +24,11 @@ label {
   font-size: $font-size-base;
 }
 
+.radio-element,
+.checkbox-element {
+  display: none;
+}
+
 // Checkmark
 .control-checkbox {
   @include inline-block;
@@ -32,17 +37,23 @@ label {
   border-radius: $input-border-radius;
   height: 13px;
   width: 13px;
-  margin: 0 4px 0 1px;
+  margin: 4px 4px 0 -20px;
+  float: left;
+  line-height: normal;
   outline: 0 none;
   vertical-align: text-bottom;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &.hover {
     border-color: $input-border-hover;
     @include box-shadow(0 1px 1px rgba(0,0,0,0.1) inset);
   }
 
-  &:active {
+  &:focus,
+  &:active,
+  &.active,
+  &.hover.active {
     border-color: $input-border-focus;
   }
 
