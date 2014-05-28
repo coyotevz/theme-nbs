@@ -5,6 +5,7 @@ require([
   'bootstrap.transition',
   'bootstrap.tab',
   'lib/nbs.checkbox',
+  'lib/nbs.radio',
 ], function($, _) {
   "use strict";
 
