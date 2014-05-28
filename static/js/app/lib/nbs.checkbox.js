@@ -32,7 +32,6 @@ define([
       };
 
       onChange = function() {
-        console.log('on change');
         $control.toggleClass('control-checkbox-checked', $input.prop('checked'));
       };
 
