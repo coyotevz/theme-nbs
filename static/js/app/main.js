@@ -4,6 +4,7 @@ require([
   'underscore',
   'bootstrap.transition',
   'bootstrap.tab',
+  'lib/nbs.checkbox',
 ], function($, _) {
   "use strict";
 
