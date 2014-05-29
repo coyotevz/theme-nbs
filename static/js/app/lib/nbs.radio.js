@@ -49,6 +49,7 @@ define([
 
   Radio.prototype.onHover = function(evt) {
     this.control.toggleClass('hover', evt.type == "mouseenter");
+    if (evt.type == "mouseleave") this.control.removeClass('active');
   };
 
   Radio.prototype.onMouseEvent = function(evt) {

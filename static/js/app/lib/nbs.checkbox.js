@@ -29,6 +29,7 @@ define([
       onHover = function(evt) {
         evt.preventDefault();
         $control.toggleClass('hover', evt.type == "mouseenter");
+        if (evt.type == "mouseleave") $control.removeClass('active');
       };
 
       onChange = function() {
