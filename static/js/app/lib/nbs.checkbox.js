@@ -3,59 +3,67 @@ define([
 ], function($) {
   "use strict";
 
-  //TODO: Rudimentary implementation, optimize...
+  // CHECKBOX CLASS DEFINITION
+  // =========================
+
+  var Checkbox = function(checkbox) {
+    this.checkbox = checkbox;
+    this.init();
+  };
+
+  Checkbox.prototype.init = function() {
+    var label = this.checkbox.is('label') ? this.checkbox : this.checkbox.find('label');
+    var mark = $('<div class="control-checkbox-checkmark">');
+    this.control = $('<div class="control-checkbox">');
+    this.input = this.checkbox.find('input[type=checkbox]');
+
+    this.input.toggleClass('checkbox-element', true);
+    this.control.append(mark);
+    this.input.after(this.control);
+    this.input.on('change', $.proxy(this, 'onChange'));
+
+    if (label) {
+      label.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
+      label.on('mousedown mouseup', $.proxy(this, 'onMouseEvent'));
+    }
+
+    this.control.on('click', $.proxy(this, 'onClick'));
+    this.control.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
+    this.control.on('mousedown mouseup', $.proxy(this, 'onMouseEvent'));
+    this.onChange(); // Check initial state
+  };
+
+  Checkbox.prototype.onClick = function(evt) {
+    evt.preventDefault();
+    this.input.trigger('click', evt);
+  };
+
+  Checkbox.prototype.onChange = function() {
+    this.control.toggleClass('checked', this.input.prop('checked'));
+  };
+
+  Checkbox.prototype.onHover = function(evt) {
+    this.control.toggleClass('hover', evt.type == "mouseenter");
+    if (evt.type == "mouseleave") this.control.removeClass('active');
+  };
+
+  Checkbox.onMouseEvent = function(evt) {
+    this.control.toggleClass('active', evt.type == "mousedown");
+  };
+
+  // PLUGIN DECLARATION
+  // ==================
 
   $.fn.nbsCheckbox = function(options) {
     return this.each(function() {
-      var $checkbox, $label, $input, $control, $mark;
-      var onClick, onHover, onMouseEvent, onChange;
+      var $this = $(this);
+      var data = $this.data('nbs.checkbox');
 
-      $checkbox = $(this);
-      $label = $checkbox.is('label') ? $checkbox : $checkbox.find('label');
-      $input = $checkbox.find('input[type="checkbox"]');
-      $control = $('<div class="control-checkbox">');
-      $mark = $('<div class="control-checkbox-checkmark">');
-
-      onClick = function(evt) {
-        evt.preventDefault();
-        $input.trigger('click', evt);
-      };
-
-      onMouseEvent = function(evt) {
-        evt.preventDefault();
-        $control.toggleClass('active', evt.type == "mousedown");
-      };
-
-      onHover = function(evt) {
-        evt.preventDefault();
-        $control.toggleClass('hover', evt.type == "mouseenter");
-        if (evt.type == "mouseleave") $control.removeClass('active');
-      };
-
-      onChange = function() {
-        $control.toggleClass('control-checkbox-checked', $input.prop('checked'));
-      };
-
-      $input.toggleClass('checkbox-element', true);
-      $control.append($mark);
-      $input.after($control);
-      $input.on('change', onChange);
-
-      if ($label) {
-        $label.on('mouseenter mouseleave', onHover);
-        $label.on('mousedown mouseup', onMouseEvent);
-      }
-
-      $control.on('click', onClick);
-      $control.on('mouseenter mouseleave', onHover);
-      $control.on('mousedown mouseup', onMouseEvent);
-      onChange();
-
-      // TODO: Update checkbox state on form reset
-
+      if (!data) $this.data('nbs.checkbox', new Checkbox($this));
     });
   };
 
+  // Activate plugin on default elements
   $(document).find('.checkbox, .checkbox-inline').nbsCheckbox();
 
 });

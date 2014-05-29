@@ -36,13 +36,13 @@ define([
   };
 
   Radio.prototype.clear = function() {
-    this.control.removeClass('control-radio-checked');
+    this.control.removeClass('checked');
   };
 
   Radio.prototype.onChange = function() {
     if (this.input.prop('checked')) {
       this.group.clearChecked();
-      this.control.addClass('control-radio-checked');
+      this.control.addClass('checked');
       this.group.checked = this;
     }
   };
