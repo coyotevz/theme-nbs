@@ -39,6 +39,7 @@ require([
 
   $(document).ready(function() {
     $('.scroll-wrapper').on('scroll', scrolled);
+    $('#inputSelect').selectize();
     setActive();
     resize();
   });

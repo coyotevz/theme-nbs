@@ -3,10 +3,10 @@
  */
 
 // variable definitions
-$selectize-font-family: inherit;
-$selectize-font-smoothing: inherit;
-$selectize-font-size: 13px;
-$selectize-line-height: 18px;
+$selectize-font-family:     inherit !default;
+$selectize-font-smoothing:  inherit !default;
+$selectize-font-size:       13px !default;
+$selectize-line-height:     18px !default;
 
 $selectize-color-text: #303030;
 $selectize-color-border: #d0d0d0;

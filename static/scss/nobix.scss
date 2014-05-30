@@ -82,7 +82,8 @@
 
 // selectize.js style
 @import "selectize/selectize";
-@import "selectize/selectize.default"; // Default theme
+//@import "selectize/selectize.default"; // Default theme
+@import "selectize/selectize.nbs"; // Nobix theme
 
 /* Specific modules to Nobix theme */
 @import "mixins";
