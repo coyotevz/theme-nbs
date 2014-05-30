@@ -6,6 +6,7 @@ require([
   'bootstrap.tab',
   'lib/nbs.checkbox',
   'lib/nbs.radio',
+  'jquery.select2.locale',
 ], function($, _) {
   "use strict";
 

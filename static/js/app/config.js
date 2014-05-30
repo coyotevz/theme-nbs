@@ -41,6 +41,10 @@ var requirejs = {
     'jquery.colorherlpers':   'vendor/flot/jquery.colorherlpers',
     'excanvas':               'vendor/flot/excanvas',
 
+    // Select 2
+    'jquery.select2':         'vendor/select2',
+    'jquery.select2.locale':  'vendor/select2_locale_es',
+
   },
 
   shim: {
@@ -86,6 +90,12 @@ var requirejs = {
     'jquery.flot.threshold':   { deps: ['jquery.flot'] },
     'jquery.flot.time':        { deps: ['jquery.flot'] },
     'jquery.colorhelpers':     { deps: ['jquery'] },
+
+    'jquery.select2': {
+      exports: '$.select2',
+      deps: ['jquery'],
+    },
+    'jquery.select2.locale':    { deps: ['jquery.select2'] },
   },
 
   urlArgs: 'ver=' + (new Date()).getTime()
