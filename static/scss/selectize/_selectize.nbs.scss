@@ -3,10 +3,52 @@
  */
 
 .selectize-control {
-  &.single {
-    padding: 0;
-    border: none;
 
+  position: relative;
+  padding: 0;
+  border: none;
+
+  .selectize-dropdown,
+  .selectize-input,
+  .selectize-input input {
+    color: $input-color;
+    font-family: inherit;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  .selectize-input {
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    @include box-shadow(none);
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+    &:hover {
+      border-color: $input-border-hover;
+    }
+
+    &:focus,
+    &.focus {
+      @include box-shadow(none);
+      border-color: $input-border-focus;
+    }
+  }
+
+  &.single {
+    .selectize-input {
+      &:after {
+        @extend .ion;
+        content: $ionicon-var-chevron-down;
+      }
+      &.dropdown-active:after {
+        content: $ionicon-var-chevron-up;
+      }
+    }
+  }
+
+  /*
+  &.single {
     .selectize-input {
       border: 1px solid $input-border;
       border-radius: $input-border-radius;
@@ -26,4 +68,5 @@
       }
     }
   }
+  */
 }
