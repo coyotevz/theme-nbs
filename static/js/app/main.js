@@ -7,6 +7,7 @@ require([
   'lib/nbs.checkbox',
   'lib/nbs.radio',
   'jquery.select2.locale',
+  'selectize',
 ], function($, _) {
   "use strict";
 

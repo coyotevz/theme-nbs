@@ -45,6 +45,9 @@ var requirejs = {
     'jquery.select2':         'vendor/select2',
     'jquery.select2.locale':  'vendor/select2_locale_es',
 
+    // selectize
+    'selectize':              'vendor/selectize',
+
   },
 
   shim: {
@@ -96,6 +99,8 @@ var requirejs = {
       deps: ['jquery'],
     },
     'jquery.select2.locale':    { deps: ['jquery.select2'] },
+
+    'selectize':                { deps: ['jquery'] },
   },
 
   urlArgs: 'ver=' + (new Date()).getTime()
