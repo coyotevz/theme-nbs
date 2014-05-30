@@ -2,6 +2,8 @@
  * selectize.js - Nobix Theme
  */
 
+$max-height-dropdown: 200px;
+
 .selectize-control {
 
   position: relative;
@@ -14,13 +16,17 @@
     color: $input-color;
     font-family: inherit;
     font-size: $font-size-base;
-    line-height: $line-height-base;
   }
 
   .selectize-input {
     border: 1px solid $input-border;
     border-radius: $input-border-radius;
     padding: $padding-base-vertical $padding-base-horizontal;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    @include box-sizing(border-box);
     @include box-shadow(none);
     @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
 
@@ -33,40 +39,66 @@
       @include box-shadow(none);
       border-color: $input-border-focus;
     }
+
+    &.dropdown-active {
+      @include box-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
   }
 
   &.single {
     .selectize-input {
       &:after {
-        @extend .ion;
-        content: $ionicon-var-chevron-down;
+        @extend .fa;
+        content: $fa-var-caret-down;
+        font-size: 16px;
+        position: absolute;
+        right: 12px;
+        top: 10px;
       }
       &.dropdown-active:after {
-        content: $ionicon-var-chevron-up;
+        content: $fa-var-caret-up;
+        top: 8px;
       }
     }
   }
 
-  /*
-  &.single {
-    .selectize-input {
-      border: 1px solid $input-border;
-      border-radius: $input-border-radius;
-      padding: $padding-base-vertical $padding-base-horizontal;
-      font-size: $font-size-base;
-      line-height: $line-height-base;
-      @include box-shadow(none);
-      @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  .selectize-dropdown {
+    padding: 0;
+    height: auto;
+    position: absolute;
+    z-index: $zindex-dropdown;
+    border: 1px solid $input-border-focus;
+    margin: -1px 0 0 0;
+    border-top: 0 none;
+    @include border-bottom-radius($input-border-radius);
+    @include box-sizing(border-box);
+    @include box-shadow(0 2px 4px rgba(0,0,0,0.2));
 
-      &:hover {
-        border-color: $input-border-hover;
+    &:hover {
+      border-color: $input-border-focus;
+    }
+
+    .selectize-dropdown-content {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: $max-height-dropdown;
+
+      [data-selectable] {
+        cursor: pointer;
+        overflow: hidden;
+        padding: $padding-base-vertical/2 $padding-base-horizontal;
+        .highlight {
+          color: #222;
+          text-decoration: underline;
+        }
       }
 
-      &:focus {
-        @include box-shadow(none);
-        border-color: $input-border-focus;
+      .optgroup-hader {
+      }
+
+      .active {
+        background-color: #eee;
       }
     }
   }
-  */
 }
