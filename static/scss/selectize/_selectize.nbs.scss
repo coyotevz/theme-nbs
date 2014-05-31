@@ -45,6 +45,12 @@ $caret-margin:          0 2px 0 0;
       @include box-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
 
+    > * {
+      vertical-align: baseline;
+      display: -moz-inline-stack;
+      display: inline-block;
+    }
+
     > input {
       padding: 0;
       min-height: 0;
@@ -81,6 +87,20 @@ $caret-margin:          0 2px 0 0;
       &.dropdown-active:after {
         content: $fa-var-caret-up;
         top: 8px;
+      }
+    }
+  }
+
+  &.multi {
+    .selectize-input {
+      &.has-items { padding: 0 4px; }
+      [data-value] {
+        background: #f5f5f5;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        margin: 3px;
+        margin-left: 0;
+        padding: 2px 5px;
       }
     }
   }

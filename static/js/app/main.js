@@ -6,8 +6,6 @@ require([
   'bootstrap.tab',
   'lib/nbs.checkbox',
   'lib/nbs.radio',
-  'jquery.select2.locale',
-  'selectize',
 ], function($, _) {
   "use strict";
 
@@ -39,7 +37,6 @@ require([
 
   $(document).ready(function() {
     $('.scroll-wrapper').on('scroll', scrolled);
-    $('#inputSelect').selectize();
     setActive();
     resize();
   });
