@@ -24,70 +24,71 @@ label {
   font-size: $font-size-base;
 }
 
+/*
 .radio-element,
 .checkbox-element {
-  display: none;
+display: none;
 }
 
 // Checkmark & Radio
 .control-checkbox,
 .control-radio {
-  @include inline-block;
-  background-color: $white;
-  border: 1px solid rgba(155,155,155,0.57);
-  border-radius: $input-border-radius;
-  height: 13px;
-  width: 13px;
-  margin: 4px 4px 0 -20px;
-  float: left;
-  line-height: normal;
-  outline: 0 none;
-  vertical-align: text-bottom;
-  cursor: pointer;
+@include inline-block;
+background-color: $white;
+border: 1px solid rgba(155,155,155,0.57);
+border-radius: $input-border-radius;
+height: 13px;
+width: 13px;
+margin: 4px 4px 0 -20px;
+float: left;
+line-height: normal;
+outline: 0 none;
+vertical-align: text-bottom;
+cursor: pointer;
 
-  &:hover,
-  &.hover {
-    border-color: $input-border-hover;
-    @include box-shadow(0 1px 1px rgba(0,0,0,0.1) inset);
-  }
+&:hover,
+&.hover {
+border-color: $input-border-hover;
+@include box-shadow(0 1px 1px rgba(0,0,0,0.1) inset);
+}
 
-  &:focus,
-  &:active,
-  &.active,
-  &.hover.active {
-    border-color: $input-border-focus;
-  }
+&:focus,
+&:active,
+&.active,
+&.hover.active {
+border-color: $input-border-focus;
+}
 
-  .control-checkbox-checkmark,
-  .control-radio-checkmark {
-    height: 15px;
-    width: 15px;
-    left: 0;
-    top: -3px;
-    outline: 0 none;
-    position: relative;
-  }
+.control-checkbox-checkmark,
+.control-radio-checkmark {
+height: 15px;
+width: 15px;
+left: 0;
+top: -3px;
+outline: 0 none;
+position: relative;
+}
 
-  &.checked {
-    .control-checkbox-checkmark {
-      background: url(/static/img/checkmark.png) no-repeat scroll -5px -3px rgba(0,0,0,0);
-    }
-    .control-radio-checkmark {
-      background: url(/static/img/radiomark.png) no-repeat scroll -4px -1px rgba(0,0,0,0);
-    }
-  }
+&.checked {
+.control-checkbox-checkmark {
+background: url(/static/img/checkmark.png) no-repeat scroll -5px -3px rgba(0,0,0,0);
+}
+.control-radio-checkmark {
+background: url(/static/img/radiomark.png) no-repeat scroll -4px -1px rgba(0,0,0,0);
+}
+}
 
-  &.partial {
-    .control-checkbox-checkmark {
-      background: url(/static/img/checkmark-partial.png) no-repeat scroll -5px -3px rgba(0,0,0,0);
-    }
-  }
+&.partial {
+.control-checkbox-checkmark {
+background: url(/static/img/checkmark-partial.png) no-repeat scroll -5px -3px rgba(0,0,0,0);
+}
+}
 }
 
 .control-radio {
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
+border-radius: 50%;
+width: 15px;
+height: 15px;
 }
 
 .cell-checkbox {
@@ -95,4 +96,34 @@ label {
     margin: 0 4px 0 1px;
     float: none;
   }
+}
+*/
+
+input[type=radio],
+input[type=checkbox] {
+  /* Hide the input, but have it sill be clickable */
+  opacity: 0;
+
+  &:checked + label:before {
+    border-color: blue;
+  }
+  & + label {
+
+    &:before {
+      @include inline-block;
+      content: ' ';
+      background-color: $white;
+      border: 1px solid red;// rgba(155,155,155,0.57);
+      line-height: normal;
+      //cursor: pointer;
+      margin: 4px 4px 0 -20px;
+      height: 13px;
+      width: 13px;
+    }
+
+    &:hover:before {
+      border-color: green;
+    }
+  }
+
 }
