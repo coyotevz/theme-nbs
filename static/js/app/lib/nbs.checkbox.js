@@ -21,6 +21,7 @@ define([
     this.control.append(mark);
     this.input.after(this.control);
     this.input.on('change', $.proxy(this, 'onChange'));
+    this.input.on('focusin focusout', $.proxy(this, 'onFocusChange'));
 
     if (label) {
       label.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
@@ -40,6 +41,10 @@ define([
 
   Checkbox.prototype.onChange = function() {
     this.control.toggleClass('checked', this.input.prop('checked'));
+  };
+
+  Checkbox.prototype.onFocusChange = function(evt) {
+    this.control.toggleClass('focus', evt.type == "focusin");
   };
 
   Checkbox.prototype.onHover = function(evt) {
