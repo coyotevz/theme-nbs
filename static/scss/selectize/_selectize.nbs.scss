@@ -2,7 +2,8 @@
  * selectize.js - Nobix Theme
  */
 
-$max-height-dropdown: 200px;
+$max-height-dropdown:   200px;
+$caret-margin:          0 2px 0 0;
 
 .selectize-control {
 
@@ -42,6 +43,28 @@ $max-height-dropdown: 200px;
 
     &.dropdown-active {
       @include box-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    > input {
+      padding: 0;
+      min-height: 0;
+      max-height: none;
+      max-width: 100%;
+      margin: $caret-margin;
+      text-indent: 0;
+      border: 0 none;
+      background: none;
+      line-height: inherit;
+
+      @include user-select(auto);
+      @include box-shadow(none);
+      &:focus { outline: none; }
+    }
+
+    &::after {
+      content: ' ';
+      display: block;
+      clear: left;
     }
   }
 
