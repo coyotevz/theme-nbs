@@ -136,6 +136,30 @@ define([
         }
       });
 
+      $('#input-tags3').selectize({
+        plugins: ['remove_button'],
+        delimiter: ',',
+        persist: false,
+        create: function(input) {
+          return {
+            value: input,
+            text: input
+          };
+        }
+      });
+
+      //$('#input-draggable').selectize({
+      //  plugins: ['drag_drop'],
+      //  delimiter: ',',
+      //  persist: false,
+      //  create: function(input) {
+      //    return {
+      //      value: input,
+      //      text: input
+      //    };
+      //  }
+      //});
+
     // end init
     },
   };
