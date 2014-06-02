@@ -15,7 +15,7 @@ label {
   }
 
   &:focus {
-    @include box-shadow(none);
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.075) inset);
     border-color: $input-border-focus;
   }
 }
@@ -47,16 +47,12 @@ label {
 
   &:hover,
   &.hover {
-    border-color: $input-border-hover;
-    @include box-shadow(0 1px 1px rgba(0,0,0,0.1) inset);
+    @extend .form-control:hover;
   }
 
   &:focus,
-  &.focus,
-  &:active,
-  &.active,
-  &.hover.active {
-    border-color: $input-border-focus;
+  &.focus {
+    @extend .form-control:focus;
   }
 
   .control-checkbox-checkmark,
