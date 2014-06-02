@@ -22,14 +22,13 @@ define([
     this.control.append(mark);
     this.input.after(this.control);
     this.input.on('change', $.proxy(this, 'onChange'));
+    this.input.on('focusin focusout', $.proxy(this, 'onFocusChange'));
 
     if (label) {
       label.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
-      label.on('mousedown mouseup', $.proxy(this, 'onMouseEvent'));
     }
 
     this.control.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
-    this.control.on('mousedown mouseup', $.proxy(this, 'onMouseEvent'));
     this.onChange(); // Check initial state
 
     this.radio.data('nbs.radio', this); // Attach object to radio element
@@ -47,13 +46,12 @@ define([
     }
   };
 
-  Radio.prototype.onHover = function(evt) {
-    this.control.toggleClass('hover', evt.type == "mouseenter");
-    if (evt.type == "mouseleave") this.control.removeClass('active');
+  Radio.prototype.onFocusChange = function(evt) {
+    this.control.toggleClass('focus', evt.type == "focusin");
   };
 
-  Radio.prototype.onMouseEvent = function(evt) {
-    this.control.toggleClass('active', evt.type == "mousedown");
+  Radio.prototype.onHover = function(evt) {
+    this.control.toggleClass('hover', evt.type == "mouseenter");
   };
 
   // RADIO GROUP CLASS DEFINITION

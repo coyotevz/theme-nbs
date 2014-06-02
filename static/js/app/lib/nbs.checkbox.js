@@ -25,12 +25,10 @@ define([
 
     if (label) {
       label.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
-      label.on('mousedown mouseup', $.proxy(this, 'onMouseEvent'));
     }
 
     this.control.on('click', $.proxy(this, 'onClick'));
     this.control.on('mouseenter mouseleave', $.proxy(this, 'onHover'));
-    this.control.on('mousedown mouseup', $.proxy(this, 'onMouseEvent'));
     this.onChange(); // Check initial state
   };
 
@@ -49,11 +47,6 @@ define([
 
   Checkbox.prototype.onHover = function(evt) {
     this.control.toggleClass('hover', evt.type == "mouseenter");
-    if (evt.type == "mouseleave") this.control.removeClass('active');
-  };
-
-  Checkbox.onMouseEvent = function(evt) {
-    this.control.toggleClass('active', evt.type == "mousedown");
   };
 
   // PLUGIN DECLARATION
