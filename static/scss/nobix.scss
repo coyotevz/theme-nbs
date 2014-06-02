@@ -77,10 +77,8 @@
 @import "ionicons/ionicons-icons";
 // End Ion Icons
 
-// selectize.js style
-//@import "selectize/selectize";
-//@import "selectize/selectize.default"; // Default theme
-@import "selectize/selectize.nbs"; // Nobix theme
+// selectize.js custom style
+@import "selectize";
 
 /* Specific modules to Nobix theme */
 @import "mixins";
