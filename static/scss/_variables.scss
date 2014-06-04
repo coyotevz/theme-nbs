@@ -100,12 +100,7 @@ $input-border-hover:            rgba(0,0,0,0.3); //#b2b2b2;
 $input-border-focus:            #4285f4; //#4d90f3;
 
 // Modals
-$modal-content-border-color:    $widget-border-color;;
-$modal-border-radius:           $widget-border-radius;
+$modal-border-width:            1px;
 $modal-border-shadow:           0 4px 16px rgba(0,0,0,0.2);
-$modal-padding:                 $widget-padding; //30px 24px;
-$modal-title-line-height:       24px;
-$modal-title-font-size:         16px;
-$modal-title-padding:           0px;
 $modal-backdrop-bg:             $white;
 $modal-backdrop-opacity:        .75;
