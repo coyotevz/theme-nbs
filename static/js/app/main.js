@@ -40,8 +40,6 @@ require([
     $('.scroll-wrapper').on('scroll', scrolled);
     setActive();
     resize();
-
-    $('#demo-modal-1').modal();
   });
 
 });
