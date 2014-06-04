@@ -9,6 +9,10 @@ app = Flask(__name__)
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/ui-elements')
+def ui_elements():
+    return render_template('ui-elements.html')
+
 @app.route('/buttons')
 def buttons():
     return render_template('buttons.html')

@@ -4,6 +4,7 @@ require([
   'underscore',
   'bootstrap.transition',
   'bootstrap.tab',
+  'bootstrap.modal',
   'lib/nbs.checkbox',
   'lib/nbs.radio',
 ], function($, _) {
@@ -39,6 +40,8 @@ require([
     $('.scroll-wrapper').on('scroll', scrolled);
     setActive();
     resize();
+
+    $('#demo-modal-1').modal();
   });
 
 });
